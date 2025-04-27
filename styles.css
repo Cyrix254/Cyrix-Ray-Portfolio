@@ -117,10 +117,10 @@
     margin-bottom: 20px;
   }
   
-  /* Hero Image Styling */
+/* Hero Image Styling */
 .hero-img {
-  width: 100%; /* Make the image responsive */
-  max-width: 400px; /* Set a maximum width for larger screens */
+  width: 100%; /* Default: Make the image responsive */
+  max-width: 400px; /* Limit the maximum width for larger screens */
   height: auto; /* Maintain aspect ratio */
   border-radius: 50%; /* Keep the circular shape */
   margin-bottom: 20px;
@@ -132,9 +132,13 @@
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .hero-img {
-    max-width: 500px; /* Slightly smaller image for phones */
+    width: 50vw; /* Occupy half of the viewport width */
+    height: 50vw; /* Maintain a square shape */
+    max-width: none; /* Remove the max-width restriction */
   }
 }
+
+
   
   .learn-more-btn {
     padding: 10px 20px;
