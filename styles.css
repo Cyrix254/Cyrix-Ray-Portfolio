@@ -132,7 +132,7 @@
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .hero-img {
-    max-width: 300px; /* Slightly smaller image for phones */
+    max-width: 500px; /* Slightly smaller image for phones */
   }
 }
   
