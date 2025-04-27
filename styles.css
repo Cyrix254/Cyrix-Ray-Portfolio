@@ -129,14 +129,7 @@
   margin-right: auto;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .hero-img {
-    width: 50vw; /* Occupy half of the viewport width */
-    height: 50vw; /* Maintain a square shape */
-    max-width: none; /* Remove the max-width restriction */
-  }
-}
+
 
 
   
