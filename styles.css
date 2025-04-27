@@ -118,26 +118,14 @@
   }
   
 /* Hero Image Styling */
-.hero-img {
-  width: 250px; /* Default: Make the image responsive */
-   /* Limit the maximum width for larger screens */
-  height: 250px; /* Maintain aspect ratio */
-  border-radius: 50%; /* Keep the circular shape */
-  margin-bottom: 20px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .hero-img {
-    width: 50vw; /* Occupy half of the viewport width */
-    height: 50vw; /* Maintain a square shape */
-    max-width: none; /* Remove the max-width restriction */
+   .hero-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
   }
-}
-
+  
 
   
   .learn-more-btn {
