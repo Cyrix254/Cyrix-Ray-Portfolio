@@ -1,0 +1,395 @@
+/* Basic resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: roboto;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+
+
+/* Navigation Bar Styling */
+.navbar {
+  background-color: #70610a; /* Yellow background */
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: none; /* Remove the line below the navbar */
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.nav-link i {
+  font-size: 1.5rem;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+  .navbar .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-link {
+    display: none; /* Hide links by default */
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-link i {
+    font-size: 1.2rem;
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger button */
+  }
+
+  .navbar.active .nav-link {
+    display: block; /* Show links when active */
+  }
+}
+
+
+
+
+
+
+
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    padding: 100px 0;
+    text-align: center;
+    background-color: #333;
+    color: white;
+  }
+  
+  .hero h1, .hero h2, .hero h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-style: bold;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .learn-more-btn {
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .learn-more-btn:hover {
+    background-color: #042869;
+  }
+  
+/* About Page Text Animation */
+#about p {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 3s ease;
+  font-family: roboto;
+}
+#about.visible p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+  .service {
+    background-color: rgb(248, 244, 244);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+  
+  /* Social Media Icons Styling */
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-items: center;
+}
+
+.social-icon:hover {
+  transform: scale(1.05);
+}
+
+/* Specific Colors for Each Platform */
+.social-icon.whatsapp {
+  background-color: #25D366;
+}
+
+.social-icon.instagram {
+  background: radial-gradient(circle at 30% 30%, #fdf497, #fdf497, #fd5949, #d6249f, #285AEB);
+}
+
+.social-icon.linkedin {
+  background-color: #0077B5;
+}
+
+.social-icon.facebook {
+  background-color: #1877F2;
+}
+
+.social-icon.github {
+  background-color: #524e4e;
+}
+
+.social-icon.tiktok {
+  background: linear-gradient(45deg, #69C9D0, #EE1D52);
+}
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+  
+    .service {
+      text-align: center;
+    }
+  
+    .hero-img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+
+  #contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #contact-form input,
+  #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Contact Form Styling */
+#contact-form {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
+  font-family: 'Roboto', sans-serif;
+}
+
+#contact-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Focus effect */
+  outline: none;
+}
+
+#contact-form button {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contact-form button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slight scaling on hover */
+}
+
+#contact-form button:active {
+  transform: scale(1);
+}
+
+  /* Services Section Styling */
+#services {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+#services h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #a6e9fd;
+  margin-bottom: 30px;
+}
+
+.service {
+  background-color: #070707;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.service h1, .service h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.service p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: white;
+  font-family: roboto;
+}
+
+.service ol {
+  margin-left: 20px;
+  padding-left: 0;
+  list-style-type: decimal;
+}
+
+.service ol li {
+  margin-bottom: 10px;
+  color:white;
+  font-family: roboto;
+}
+
+.service ol li b {
+  color: #007bff;
+}
+
+.service h2[style] {
+  color: aqua !important; /* Retain inline style for "Why Choose Me?" */
+}
+
+/* Responsive Design for Services Section */
+@media (max-width: 768px) {
+  #services h2 {
+    font-size: 2rem;
+  }
+
+  .service {
+    padding: 15px;
+  }
+
+  .service h1, .service h2 {
+    font-size: 1.5rem;
+  }
+
+  .service p {
+    font-size: 0.9rem;
+  }
+}
