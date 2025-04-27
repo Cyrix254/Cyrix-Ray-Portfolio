@@ -119,9 +119,9 @@
   
 /* Hero Image Styling */
 .hero-img {
-  width: 100%; /* Default: Make the image responsive */
-  max-width: 400px; /* Limit the maximum width for larger screens */
-  height: auto; /* Maintain aspect ratio */
+  width: 250px; /* Default: Make the image responsive */
+   /* Limit the maximum width for larger screens */
+  height: 250px; /* Maintain aspect ratio */
   border-radius: 50%; /* Keep the circular shape */
   margin-bottom: 20px;
   display: block;
