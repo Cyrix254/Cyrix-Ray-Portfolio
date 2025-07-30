@@ -5,38 +5,134 @@
     --light: #f8f9fa;
 }
 
-/* Base Styles */
+/* Base Styles - SCROLLING FIXES */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding-top: 56px; /* For fixed navbar */
     color: #333;
     line-height: 1.6;
     background-color: var(--dark);
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-/* Hero Section */
+
+
+/* Hamburger Menu Styles */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+    background: transparent;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+    transform: translateY(-6px);
+}
+
+.navbar-toggler-icon::after {
+    transform: translateY(6px);
+}
+
+/* Active state (when menu is open) */
+.navbar-toggler.active .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+.navbar-toggler.active .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler.active .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+}
+
+/* Menu collapse transition */
+.navbar-collapse {
+    transition: all 0.3s ease;
+}
+
+/* Hero Section - SCROLLING FIX */
 .hero {
     min-height: 100vh;
+    height: auto;
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                 url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
+    padding: 20px 0;
+    position: relative;
+    overflow: visible;
 }
 
+/* About Hero Section - SCROLLING FIX */
+.about-hero {
+    min-height: auto;
+    height: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    position: relative;
+    overflow: visible;
+}
+
+/* Section Padding */
+section {
+    padding: 80px 0;
+    position: relative;
+    overflow: visible;
+}
+
+/* REST OF YOUR EXISTING STYLING - UNCHANGED */
 .profile-img {
     width: 400px;
     height: 400px;
     object-fit: cover;
     border: 5px solid white;
 }
-
-/* Section Padding */
-section {
-    padding: 80px 0;
-}
-
 
 .navbar-nav .nav-link {
     color: #ffffff;
@@ -45,8 +141,8 @@ section {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ffc107; /* Change to a gold color on hover */
-    transform: scale(1.1); /* Slightly enlarge the link */
+    color: #ffc107;
+    transform: scale(1.1);
     background-color: black;
 }
 
@@ -58,25 +154,12 @@ section {
 }
 
 .navbar-brand:hover {
-    color: #ffc107; /* Change brand color on hover */
-}
-
-/* About Hero Section */
-.about-hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 0;
+    color: #ffc107;
 }
 
 .about-content {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent white background */
-    backdrop-filter: blur(10px); /* Blur effect */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -87,7 +170,7 @@ section {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 20px;
-    color: #ffc107; /* Gold color for the heading */
+    color: #ffc107;
 }
 
 .about-content p {
@@ -97,10 +180,6 @@ section {
     font-family: roboto;
 }
 
-.about-content p:last-child {
-    margin-bottom: 0;
-}
-/* Service Cards */
 .service-card {
     transition: transform 0.3s ease;
 }
@@ -124,13 +203,10 @@ section {
     font-family: roboto;
 }
 
-#services h2{
+#services h2 {
     color: white;
 }
 
-
-
-/* Portfolio Cards */
 .portfolio-card {
     transition: transform 0.3s ease;
 }
@@ -144,7 +220,6 @@ section {
     object-fit: cover;
 }
 
-/* Social Icons */
 .social-icons a {
     transition: color 0.3s ease;
 }
@@ -153,7 +228,6 @@ section {
     color: #0ac4ca !important;
 }
 
-/* Form Validation */
 .was-validated .form-control:invalid,
 .form-control.is-invalid {
     border-color: #dc3545;
@@ -164,42 +238,44 @@ section {
     border-color: #198754;
 }
 
-#contact h2{
+#contact h2 {
     color: white;
 }
 
-/* Portfolio Card Hover Effect */
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Slightly enlarge the card */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Optional: Add an overlay effect on the image */
 .card-img-top {
     transition: opacity 0.3s ease;
 }
 
 .card:hover .card-img-top {
-    opacity: 0.8; /* Dim the image slightly on hover */
+    opacity: 0.8;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    body {
+        padding-top: 72px;
+    }
+    
     .profile-img {
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
     
     section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
-}
-
-/* Disable pinch zoom */
-html {
-    touch-action: manipulation;
+    
+    .hero, .about-hero {
+        min-height: auto;
+        padding: 40px 0;
+    }
 }
